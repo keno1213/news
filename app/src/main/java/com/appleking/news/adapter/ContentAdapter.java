@@ -1,6 +1,7 @@
 package com.appleking.news.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.appleking.news.DetailPageActivity;
 import com.appleking.news.R;
 import com.appleking.news.bean.NewsData;
 import com.bumptech.glide.Glide;
@@ -60,12 +62,21 @@ public class ContentAdapter extends RecyclerView.Adapter {
             iv = (ImageView) itemView.findViewById(R.id.iv_image);
             title = (TextView) itemView.findViewById(R.id.tv_title);
             author = (TextView) itemView.findViewById(R.id.tv_author);
+
         }
 
-        public void bindData(NewsData.ResultBean.DataBean bean){
+        public void bindData(final NewsData.ResultBean.DataBean bean){
             Glide.with(context).load(bean.getThumbnail_pic_s()).into(iv);
             title.setText(bean.getTitle());
             author.setText(bean.getAuthor_name());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context.getActivity(), DetailPageActivity.class);
+                    intent.putExtra("url",bean.getUrl());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
