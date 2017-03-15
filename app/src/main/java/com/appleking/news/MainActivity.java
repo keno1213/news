@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewpager;
     private TabAdapter adapter;
 
-    public static final String[] tabTitle = new String[]{"综艺", "体育", "新闻", "热点", "头条", "军事", "历史", "科技", "人文", "地理"};
+    public static final String[] tabTitle = new String[]{"头条", "社会", "国内", "国际", "娱乐", "体育", "军事", "科技", "财经", "时尚"};
+    public static final String[] types = new String[]{"toutiao", "shehui", "guonei", "guoji", "yule", "tiyu", "junshi", "keji", "caijing", "shishang"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
