@@ -1,5 +1,6 @@
 package com.appleking.news.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -108,7 +109,7 @@ public class TabLayoutFragment extends Fragment implements INewsView {
         adapter = new ContentAdapter(beans,this);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
-        recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL,30, Color.GRAY));
         recyclerView.setAdapter(adapter);
     }
 }
