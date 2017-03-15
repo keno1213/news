@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ItemDecoration;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.appleking.news.adapter.ContentAdapter;
 import com.appleking.news.bean.NewsData;
 import com.appleking.news.presenter.NewsPresents;
 import com.appleking.news.view.INewsView;
+import com.appleking.news.widget.RecycleViewDivider;
 
 import java.util.List;
 
@@ -106,6 +108,7 @@ public class TabLayoutFragment extends Fragment implements INewsView {
         adapter = new ContentAdapter(beans,this);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
+        recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
     }
 }
