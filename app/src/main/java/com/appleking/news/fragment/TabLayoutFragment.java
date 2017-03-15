@@ -30,7 +30,7 @@ import java.util.List;
 
 public class TabLayoutFragment extends Fragment implements INewsView {
     public static String TABLAYOUT_FRAGMENT = "tab_fragment";
-    private TextView txt;
+
     private int type;
     private RecyclerView recyclerView;
     private NewsPresents presents;
@@ -65,7 +65,7 @@ public class TabLayoutFragment extends Fragment implements INewsView {
 
 
     protected void initView(View view) {
-        txt = (TextView) view.findViewById(R.id.tab_txt);
+//        txt = (TextView) view.findViewById(R.id.tab_txt);
         recyclerView = (RecyclerView) view.findViewById(R.id.id_recyclerview);
 
         presents.refresh();
@@ -109,7 +109,7 @@ public class TabLayoutFragment extends Fragment implements INewsView {
         adapter = new ContentAdapter(beans,this);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
-        recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL,30, Color.GRAY));
+        recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(),LinearLayoutManager.VERTICAL,27, Color.parseColor("#55666666")));
         recyclerView.setAdapter(adapter);
     }
 }
