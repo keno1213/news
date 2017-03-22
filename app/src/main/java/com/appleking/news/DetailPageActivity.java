@@ -38,30 +38,12 @@ public class DetailPageActivity extends AppCompatActivity {
 
         db = database.getReadableDatabase();
 
-        insertData();
-        updateData();
-        queryData();
-        deleteData();
+
 
     }
 
-    private void updateData() {
-    }
 
-    private void queryData() {
-    }
 
-    private void insertData() {
-        ContentValues cv = new ContentValues();
-        cv.put("username","keno");
-        cv.put("age",28);
-        db.insert("mydata.db",null,cv);
-    }
-
-    private void deleteData() {
-        R.id.
-
-    }
 }
 
 class DatabaseHelper extends SQLiteOpenHelper {
